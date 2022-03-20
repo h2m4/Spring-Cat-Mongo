@@ -1,0 +1,35 @@
+version: '3.1'
+#
+#services:
+#  mongo:
+#    build: .
+##    image: mongo:5.0.3
+#    restart: always
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root
+#      MONGO_INITDB_ROOT_PASSWORD: 12345678
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root
+#      MONGO_INITDB_ROOT_PASSWORD: 12345678
+      MONGO_INITDB_DATABASE: admin
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
+#  mongo-express:
+#    image: mongo-express
+#    restart: always
+#    ports:
+#      - 8082:8081
+#    environment:
+#      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+#      ME_CONFIG_MONGODB_ADMINPASSWORD: 12345678
+#      ME_CONFIG_MONGODB_URL: mongodb://root:12345678@mongodb:27017/
+

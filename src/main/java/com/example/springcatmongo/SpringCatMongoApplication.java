@@ -10,4 +10,5 @@ public class SpringCatMongoApplication {
         SpringApplication.run(SpringCatMongoApplication.class, args);
     }
 
+
 }

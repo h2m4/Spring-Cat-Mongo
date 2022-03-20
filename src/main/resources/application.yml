@@ -1,0 +1,2 @@
+spring.data.mongodb.uri=mongodb://springuser:12345678@localhost:27017/admin
+#spring.data.mongodb.database=spring-cat-mongodb
